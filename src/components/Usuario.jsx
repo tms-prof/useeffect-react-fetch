@@ -5,7 +5,7 @@ export default function Usuario() {
   const [usuario, setUsuario] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
-
+// o hook vem no topo após as declarações de estados
   useEffect(() => {
     setCarregando(true);
     setErro(null);
@@ -19,6 +19,8 @@ export default function Usuario() {
       .catch(e => setErro(e.message))
       .finally(() => setCarregando(false));
   }, [userId]); // <- refaz o fetch sempre que userId mudar
+
+  // em seguida vem o jsx do componente.
 
   return (
     <div className="usuario">
