@@ -21,11 +21,12 @@ export default function Usuario() {
   }, [userId]); // <- refaz o fetch sempre que userId mudar
 
   return (
-    <div>
+    <div className="usuario">
       <h2>Usuário #{userId}</h2>
-
-      <button onClick={() => setUserId(userId - 1)}>Anterior</button>
-      <button onClick={() => setUserId(userId + 1)}>Próximo</button>
+      <div>
+       <button onClick={() => setUserId(userId - 1)}>Anterior</button>
+       <button onClick={() => setUserId(userId + 1)}>Próximo</button>
+      </div>
 
       {carregando && <p>Carregando...</p>}
       {erro && <p style={{ color: "red" }}>{erro}</p>}
